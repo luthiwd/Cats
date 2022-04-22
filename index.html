@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CATS</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1 id ="score"></h1>
+    <!-- SPLASH SCREEN -->
+    
+      <img src="./images/logocats.png" width="500" alt="logo">
+      <div id="splash-screen" class="container">
+        <article id= "instructions">
+            <h1>Instrucciones</h1>
+            <ul>
+                <li><img src="./images/keys.png" width="500" alt="logo" id="keys"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+
+            </ul>
+        </article>
+      <button id="start-btn">Start!</button>
+    </div>
+    
+    <!-- GAME SCREEN -->
+    <canvas id="my-canvas" width="1000" height="600"></canvas>
+    
+    <!-- GAME OVER SCREEN -->
+    <div id="gameover-screen" class="container">
+      <img src="./images/" width="500" alt="logo">
+      <button id="restart-btn">Play Again!</button>
+    </div>
+
+  </div>
+
+  <script src="./javascript/main.js"></script>
+  <script src="./javascript/game.js"></script>
+  <script src="./javascript/human.js"></script>
+  <script src="./javascript/cat.js"></script>
+  <script src="./javascript/food.js"></script>
+</body>
+</html>

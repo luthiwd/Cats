@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    background-color:  #a8939a ;
+  }
+  
+  #my-canvas {
+    background-color: darkgray;
+  }
+  
+  #start-btn, #restart-btn {
+    background-color: #94a070  ;
+    color: #eff3ed ;
+    padding: 20px;
+    font-size: 20px;
+    margin-top: 40px;
+    border-radius: 10px; 
+  }
+
+  #instructions {
+      background-color: beige;
+      display: flex;
+      flex-direction: column;
+      justify-items: baseline;
+      align-items:stretch;
+      margin: 10px;
+      
+    
+  }
+
+  #keys {
+      width: 100px;
+      height: 100px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  #my-canvas, #gameover-screen {
+    display: none;
+  }
