@@ -2,9 +2,10 @@ class Game {
 
   constructor () {
     this.bg = new Image();
-    this.bg.src = "./images/bg.png"
+    this.bg.src = "./images/bg.jpg"
     this.cat = new Cat ();
     this.isGameOn = true;
+    this.cthulu = new Cthulu ();
 
   }
 
@@ -33,6 +34,8 @@ class Game {
     // 3. Dibujar los elementos
     ctx.drawImage (this.bg, 0, 0, canvas.width, canvas.height);
     this.cat.drawCat();
+    this.cthulu.drawCthulu();
+
 
     // 4. Control de recursión
     if ( this.isGameOn ){
