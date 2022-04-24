@@ -20,9 +20,18 @@ const startGame = () => {
     
 }
 
-// const keyPress = (event) => {
-//   if ( event.code === )
-// }
+const keyPress = (event) => {
+    if ( event.code === "ArrowLeft" && this.game.cat.x > 0  ){
+        this.game.cat.x -= this.game.cat.speedX;
+    }else if (event.code === "ArrowRight" && (this.game.cat.x < canvas.width - this.game.cat.h)){
+        this.game.cat.x += this.game.cat.speedX; 
+    }else if (event.code === "ArrowDown" && this.game.cat.y < canvas.height - this.game.cat.h){
+        this.game.cat.y += this.game.cat.speedY;
+    }else if (event.code === "ArrowUp" && this.game.cat.y > 0){
+        this.game.cat.y -= this.game.cat.speedY;
+    }
+     
+ }
 
 startBtn.addEventListener("click", startGame);
-window.addEventListener("keydown", keyPress);
+window.addEventListener("keydown", keyPress); 

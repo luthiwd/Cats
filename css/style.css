@@ -10,34 +10,18 @@ body {
   #start-btn, #restart-btn {
     background-color: #94a070  ;
     color: #eff3ed ;
-    padding: 20px;
+    padding: 10px;
     font-size: 20px;
-    margin-top: 40px;
+    margin-top: 20px;
     border-radius: 10px; 
   }
 
-  #instructions {
-      background-color: beige;
-      display: flex;
-      flex-direction: column;
-      justify-items: baseline;
-      align-items:stretch;
-      margin: 10px;
-      
-    
-  }
-
-  #keys {
-      width: 100px;
-      height: 100px;
-  }
-  
-  .container {
+   .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin: 5px;
   }
   
   #my-canvas, #gameover-screen {
