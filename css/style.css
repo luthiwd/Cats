@@ -8,15 +8,16 @@ body {
   }
   
   #start-btn, #restart-btn {
-    background-color: #94a070  ;
-    color: #eff3ed ;
+    background-color:  #a8939a ;
+    width: 100px;
+    height: 100px;
     padding: 10px;
     font-size: 20px;
     margin-top: 20px;
-    border-radius: 10px; 
+    border-style: none;
   }
 
-   .container {
+  .container {
     display: flex;
     flex-direction: column;
     justify-content: center;

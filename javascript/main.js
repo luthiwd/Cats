@@ -12,9 +12,6 @@ const startGame = () => {
     canvas.style.display = "block";
     gameOverScreen.style.display= "none";
   
-    //... empezar nuestra logica de juego 
-    //nuestro juego sera toda una nueva clase
-    //vamos a crear un nuevo objeto de lo que será la clase Game
     game = new Game();
     game.gameLoop();
     
