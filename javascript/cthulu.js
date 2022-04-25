@@ -1,8 +1,8 @@
 class Cthulu {
 
     constructor () {
-        this.x = Math.random() * canvas.width ; // posicion eje x
-        this.y = Math.random() * canvas.height ; // posicion eje y
+        this.x = Math.random() * canvas.width; // posicion eje x
+        this.y = Math.random() * canvas.height; // posicion eje y
         this.w = 60; // width - ancho
         this.h = 60; // height - alto
         this.img = new Image();

@@ -14,6 +14,7 @@ const startGame = () => {
   
     game = new Game();
     game.addNewCthulu();
+    game.addNewCans();
     game.gameLoop();
     
 }

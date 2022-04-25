@@ -7,6 +7,9 @@ class Game {
     this.isGameOn = true;
     this.cthuluArr = [
       new Cthulu(0, "./images/cthulu.png")];
+    this.cansArr = [
+      new Cans (Math.random()*canvas.width, "./image/lata.png")
+    ];
   }
 
   gameOver = () => {
@@ -26,8 +29,14 @@ class Game {
   addNewCthulu = () => {
     setInterval ( () => { 
       let newCthulu = new Cthulu();
-      console.log("tirando")
       this.cthuluArr.push(newCthulu);
+    }, 1000)
+  }
+
+  addNewCans = () =>{
+    setInterval (() => {
+      let newCans = new Cans();
+      this.cansArr.push(newCans);
     }, 1000)
   }
 
@@ -41,15 +50,19 @@ class Game {
 
     // 2. Acciones de movimiento de los elementos
     this.gameOver();
-
+    this.cansArr.forEach((eachCans) => {
+      eachCans.moveCans();
+    })
 
     // 3. Dibujar los elementos
     ctx.drawImage (this.bg, 0, 0, canvas.width, canvas.height);
     this.cat.drawCat();
+    this.cansArr.forEach((eachCans) => {
+      eachCans.drawCans();
+    });
     this.cthuluArr.forEach((eachCthulu) => {
-      console.log ("Dibujando")
       eachCthulu.drawCthulu();
-    })
+    });
 
     // 4. Control de recursión
     if ( this.isGameOn ){
