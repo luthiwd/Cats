@@ -23,7 +23,7 @@ class Game {
             this.isGameOn = false;
             canvas.style.display = "none";
             gameOverScreen.style.display = "flex";
-            scoreMain.style.display = "none";
+            gameDiv.style.display = "none";
           }
 
     })

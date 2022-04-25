@@ -17,8 +17,8 @@ body {
     border-style: none;
   }
 
-  #gameDiv, #score {
-    display : "none";
+  #gameDiv {
+    display : none;
   }
 
 
