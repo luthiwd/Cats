@@ -15,20 +15,4 @@ class Cat  {
         ctx.drawImage(this.img, this.x, this.y, this.w, this.h)
     }
 
-    
-    
-
-    catCollision = () => {
-        //Collision with Humans & food
-        // if (ballX< paddleX + paddleW &&
-        //     ballX + ballRadius > paddleX &&
-        //     ballY < paddleY + paddleH &&
-        //     ballRadius + ballY > paddleY) {
-        //     // collision detected!
-        //     //pelota rebota hacia arriba
-        //     ballDirectionY = - 1
-        //     ballSpeed = ballSpeed + 1
-        // }
-            
-    }
 }

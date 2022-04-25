@@ -8,7 +8,7 @@ Se pierde cuando el humano nos captura varias veces.
 
 Personajes: 
 Gato : Se podrá mover por toda la pantalla, evitando al humano y cogiendo latas y "llaves"
-Humano : Aparecerá de manera aleatoria en 5 posiciones, cada minuto de jhuego aparecerá un nuevo humano que podrás desaparecer con las "llaves"
+Cthulu : Aparecerá de manera aleatoria en 5 posiciones, cada minuto de jhuego aparecerá un nuevo humano que podrás desaparecer con las "llaves"
 
 # CATS
 
@@ -37,7 +37,7 @@ List here the JS files you think you might need.
     Player () { this.x; this.y; this.w; this.h; }
     drawPlayer () {}
     movePlayer () {}
-## human.js
+## cthulu.js
 ## food.js
 ## States and Transitions
     Start Screen, Game Screen, Final Screen.

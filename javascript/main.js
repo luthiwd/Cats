@@ -13,6 +13,7 @@ const startGame = () => {
     gameOverScreen.style.display= "none";
   
     game = new Game();
+    game.addNewCthulu();
     game.gameLoop();
     
 }
@@ -32,3 +33,4 @@ const keyPress = (event) => {
 
 startBtn.addEventListener("click", startGame);
 window.addEventListener("keydown", keyPress); 
+restartBtn.addEventListener("click", startGame);
