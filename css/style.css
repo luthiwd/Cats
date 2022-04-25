@@ -19,6 +19,9 @@ body {
 
   #gameDiv {
     display : none;
+    font-weight: bold;
+    color: rgba(84,97,90,255);
+    font-size: 25px;
   }
 
 
