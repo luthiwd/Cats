@@ -40,8 +40,7 @@ class Game {
     }, 1000)
   }
 
-
-  
+ 
   gameLoop = () => {
 
     // 1. Borrar el Canvas
@@ -50,6 +49,11 @@ class Game {
 
     // 2. Acciones de movimiento de los elementos
     this.gameOver();
+    
+    this.cthuluArr.forEach((eachCthulu) => {
+      eachCthulu.moveCthulu();
+    })
+
     this.cansArr.forEach((eachCans) => {
       eachCans.moveCans();
     })
