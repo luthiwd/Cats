@@ -1,7 +1,8 @@
 const startBtn = document.querySelector("#start-btn");
 const startScreen = document.querySelector("#splash-screen");
 const restartBtn = document.querySelector ("#restart-btn");
-const scoreDOM = document.querySelector("#score")
+const gameDiv= document.querySelector('#gameDiv');
+let score = document.querySelector('#score');
 const gameOverScreen = document.querySelector("#gameover-screen")
 const canvas = document.querySelector("#my-canvas");
 const ctx = canvas.getContext("2d");
@@ -11,7 +12,8 @@ const startGame = () => {
     startScreen.style.display = "none";
     canvas.style.display = "block";
     gameOverScreen.style.display= "none";
-  
+    gameDiv.style.display = "flex"
+    
     game = new Game();
     game.addNewCthulu();
     game.addNewCans();

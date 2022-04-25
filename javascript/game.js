@@ -10,7 +10,7 @@ class Game {
     this.cansArr = [
       new Cans (Math.random()*canvas.width, "./image/lata.png")
     ];
-    this.score = 0;
+    this.totalScore = 0;
     this.delete;
   }
 
@@ -23,16 +23,13 @@ class Game {
             this.isGameOn = false;
             canvas.style.display = "none";
             gameOverScreen.style.display = "flex";
+            scoreMain.style.display = "none";
           }
 
     })
   };
 
   collisionCans = () => {
-    ctx.font = "16px Arial";
-    ctx.fillStyle = "#0095DD";
-    ctx.fillText("Score: "+ this.score, 8, 20);
-
     this.cansArr.forEach ((eachCans)=> {
       if (this.cat.x < eachCans.x + eachCans.w &&
             this.cat.x + eachCans.w > eachCans.x &&
@@ -40,7 +37,8 @@ class Game {
             this.cat.h + this.cat.y > eachCans.y){
       this.delete = this.cansArr.indexOf(eachCans)
       this.cansArr.splice(this.delete, 1)      
-      this.score += 1;
+      this.totalScore++;
+      score.innerText = this.totalScore;
       }
 
     })
