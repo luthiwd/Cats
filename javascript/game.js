@@ -10,6 +10,8 @@ class Game {
     this.cansArr = [
       new Cans (Math.random()*canvas.width, "./image/lata.png")
     ];
+    this.score = 0;
+    this.delete;
   }
 
   gameOver = () => {
@@ -25,6 +27,25 @@ class Game {
 
     })
   };
+
+  collisionCans = () => {
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#0095DD";
+    ctx.fillText("Score: "+ this.score, 8, 20);
+
+    this.cansArr.forEach ((eachCans)=> {
+      if (this.cat.x < eachCans.x + eachCans.w &&
+            this.cat.x + eachCans.w > eachCans.x &&
+            this.cat.y < eachCans.y + eachCans.h &&
+            this.cat.h + this.cat.y > eachCans.y){
+      this.delete = this.cansArr.indexOf(eachCans)
+      this.cansArr.splice(this.delete, 1)      
+      this.score += 1;
+      }
+
+    })
+    console.log(this.score)
+  }
  
   addNewCthulu = () => {
     setInterval ( () => { 
@@ -49,6 +70,8 @@ class Game {
 
     // 2. Acciones de movimiento de los elementos
     this.gameOver();
+
+    this.collisionCans();
     
     this.cthuluArr.forEach((eachCthulu) => {
       eachCthulu.moveCthulu();
