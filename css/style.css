@@ -17,6 +17,13 @@ body {
     border-style: none;
   }
 
+  #catName {
+    color : #e3e2cc;
+    background-color : #54615a;
+    border: none;
+  }
+
+
   #gameDiv {
     display : none;
     font-weight: bold;

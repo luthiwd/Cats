@@ -5,8 +5,8 @@ class Cat  {
         this.y = canvas.height / 1.5; // posicion eje y
         this.w = 60; // width - ancho
         this.h = 48; // height - alto
-        this.speedX = 5;
-        this.speedY = 5;
+        this.speedX = 10;
+        this.speedY = 10;
         this.img = new Image();
         this.img.src = "./images/cat.png";
     }
