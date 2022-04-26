@@ -23,6 +23,15 @@ body {
     border: none;
   }
 
+  #boardScore {
+    display: none;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+    list-style: none;
+    color: #e3e2cc;
+
+  }
+
 
   #gameDiv {
     display : none;

@@ -24,7 +24,9 @@ class Game {
             canvas.style.display = "none";
             gameOverScreen.style.display = "flex";
             gameDiv.style.display = "none";
+            scoreBoard.style.display = "block";
             audio.pause();
+            
           }
 
     })
@@ -41,9 +43,18 @@ class Game {
       this.totalScore++;
       score.innerText = this.totalScore;
       }
-
+         
     })
-    console.log(this.score)
+    this.newSpeed();
+     
+  }
+
+  newSpeed = () => {
+    this.cthuluArr.forEach((eachCthulu) => {
+      if ( this.totalScore > 3 && this.totalScore < 10){
+        eachCthulu.speedX = 2;
+      }
+    })
   }
  
   addNewCthulu = () => {
@@ -69,7 +80,7 @@ class Game {
 
     // 2. Acciones de movimiento de los elementos
     this.gameOver();
-
+    
     this.collisionCans();
     
     this.cthuluArr.forEach((eachCthulu) => {
