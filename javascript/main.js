@@ -20,7 +20,7 @@ const startGame = () => {
     gameDiv.style.display = "flex"
     scoreBoard.style.display ="none";
     console.log((namePlayer).value);
-
+    score.innerText = 0;
     
     audio.play();
     audio.volume = 0.2;
