@@ -9,7 +9,8 @@ let namePlayer = document.querySelector("#catName");
 const canvas = document.querySelector("#my-canvas");
 const ctx = canvas.getContext("2d");
 const audio = new Audio ("./music/cute.mp3");
-
+let nameScore = document.querySelector("#namePlayer")
+let listScore = document.querySelectorAll(".list")
 
 
 const startGame = () => {
@@ -21,6 +22,8 @@ const startGame = () => {
     scoreBoard.style.display ="none";
     console.log((namePlayer).value);
     score.innerText = 0;
+    
+    nameScore.innerText = namePlayer.value;
     
     audio.play();
     audio.volume = 0.2;

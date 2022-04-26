@@ -17,20 +17,25 @@ class Game {
   gameOver = () => {
     this.cthuluArr.forEach ((eachCthulu)=> {
       if (this.cat.x < eachCthulu.x + eachCthulu.w &&
-            this.cat.x + eachCthulu.w > eachCthulu.x &&
-            this.cat.y < eachCthulu.y + eachCthulu.h &&
-            this.cat.h + this.cat.y > eachCthulu.y){
-            this.isGameOn = false;
-            canvas.style.display = "none";
-            gameOverScreen.style.display = "flex";
-            gameDiv.style.display = "none";
-            scoreBoard.style.display = "block";
-            audio.pause();
-            
-          }
+        this.cat.x + eachCthulu.w > eachCthulu.x &&
+        this.cat.y < eachCthulu.y + eachCthulu.h &&
+        this.cat.h + this.cat.y > eachCthulu.y){
+        this.isGameOn = false;
+        canvas.style.display = "none";
+        gameOverScreen.style.display = "flex";
+        gameDiv.style.display = "none";
+        scoreBoard.style.display = "block";
+        audio.pause();
+        console.log (listScore);
+        listScore[0].innerText = namePlayer.value + this.totalScore;
+
+      }
 
     })
   };
+
+  
+
 
   collisionCans = () => {
     this.cansArr.forEach ((eachCans)=> {
