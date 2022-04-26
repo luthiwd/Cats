@@ -24,17 +24,14 @@ class Game {
         canvas.style.display = "none";
         gameOverScreen.style.display = "flex";
         gameDiv.style.display = "none";
-        scoreBoard.style.display = "block";
+        scoreBoard.style.display = "block"
         audio.pause();
-        console.log (listScore);
-        listScore[0].innerText = namePlayer.value + this.totalScore;
-
+        
       }
 
     })
   };
 
-  
 
 
   collisionCans = () => {

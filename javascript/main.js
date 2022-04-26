@@ -1,32 +1,49 @@
+// Botones para iniciar y reiniciar el juego
 const startBtn = document.querySelector("#start-btn");
-const startScreen = document.querySelector("#splash-screen");
 const restartBtn = document.querySelector ("#restart-btn");
-const gameDiv= document.querySelector('#gameDiv');
-let score = document.querySelector('#score');
+
+//Screens del juego
+const startScreen = document.querySelector("#splash-screen");
 const gameOverScreen = document.querySelector("#gameover-screen");
-const scoreBoard = document.querySelector("#boardScore");
-let namePlayer = document.querySelector("#catName");
 const canvas = document.querySelector("#my-canvas");
 const ctx = canvas.getContext("2d");
+
+//Score en pantalla y nombre del Jugador
+const gameDiv= document.querySelector('#gameDiv');
+let score = document.querySelector('#score');
+let namePlayer = document.querySelector("#catName"); //Nombre introducido en el input
+let nameScore = document.querySelector("#namePlayer"); // Variable donde insertaremos el nombre del Input
+
+//Musica
 const audio = new Audio ("./music/cute.mp3");
-let nameScore = document.querySelector("#namePlayer")
-let listScore = document.querySelectorAll(".list")
+
+//ScoreBoard
+scoreBoard = document.querySelector("#boardScore")
+
 
 
 const startGame = () => {
+    //Condicional por si no se inserta nombre en el Input
     if (!(namePlayer).value) namePlayer.value = "Misifu"
+
+    //Estado inicial de las Screens
     startScreen.style.display = "none";
     canvas.style.display = "block";
     gameOverScreen.style.display= "none";
-    gameDiv.style.display = "flex"
-    scoreBoard.style.display ="none";
+    gameDiv.style.display = "flex";
+    scoreBoard.style.display = "none"
+    //Test y prubeas de codigo
     console.log((namePlayer).value);
-    score.innerText = 0;
-    
+
+    //Score y Nombre mostrado en pantalla de Juego
+    score.innerText = 0;    
     nameScore.innerText = namePlayer.value;
-    
+
+    //Musica del juego
     audio.play();
     audio.volume = 0.2;
+
+    //Inicialización del Juego
     game = new Game();
     game.addNewCthulu();
     game.addNewCans();
@@ -52,8 +69,6 @@ const keyPress = (event) => {
 
 
 
-
 startBtn.addEventListener("click", startGame);
 window.addEventListener("keydown", keyPress);
-
 restartBtn.addEventListener("click", startGame);
