@@ -8,7 +8,6 @@ class Cans {
         this.speed = 1;
         this.img = new Image();
         this.img.src = "./images/lata.png";
-        
     }
 
     drawCans = () => {

@@ -33,20 +33,18 @@ const startGame = () => {
     gameDiv.style.display = "flex";
     scoreBoard.style.display = "none"
     //Test y prubeas de codigo
-    console.log((namePlayer).value);
-
-    
+        
 
     //Musica del juego
-    // audio.play();
-    // audio.volume = 0.2;
+    audio.play();
+    audio.volume = 0.2;
 
     //Inicialización del Juego
     game = new Game();
     //Score y Nombre mostrado en pantalla de Juego
     score.innerText = 0;    
     nameScore.innerText = namePlayer.value;
-    
+    game.addNewConga();
     game.addNewCthulu();
     game.addNewCans();
     game.gameLoop();

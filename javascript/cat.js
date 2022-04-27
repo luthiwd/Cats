@@ -9,8 +9,6 @@ class Cat  {
         this.speedY = 10;
         this.img = new Image();
         this.img.src = srcParam;
-        this.keys ={up:false,down:false,left:false,right:false};
-
     }
 
     drawCat = () => {
