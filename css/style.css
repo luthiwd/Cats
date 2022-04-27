@@ -18,16 +18,20 @@ body {
   }
 
   #catName {
-    color : #e3e2cc;
-    background-color : #54615a;
+    color: #eef3ed;
+    background-color : #6f876f;
     border: none;
+    height: 30px;
+  }
+
+  ::placeholder {
+    color : #e3e2cc;
   }
 
   #boardScore {
     display: none;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 22px;
-    list-style: none;
     color: #54615a;
     font-weight: bold;
     font-style: oblique;
@@ -57,4 +61,13 @@ body {
   
   #my-canvas, #gameover-screen {
     display: none;
+  }
+
+  #feet {
+    display: flex;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    color: #54615a;
+    padding-top: 50px;
+
   }
