@@ -4,7 +4,7 @@ class Cthulu {
         this.x = 0; // posicion eje x
         this.y = Math.random() * canvas.height; // posicion eje y
         this.speedX = 1;
-        this.speedY = 0.25;
+        this.speedY = 0;
         this.dx = 0;
         this.dy = 0; 
         this.w = 60; // width - ancho

@@ -35,16 +35,18 @@ const startGame = () => {
     //Test y prubeas de codigo
     console.log((namePlayer).value);
 
-    //Score y Nombre mostrado en pantalla de Juego
-    score.innerText = 0;    
-    nameScore.innerText = namePlayer.value;
+    
 
     //Musica del juego
-    audio.play();
-    audio.volume = 0.2;
+    // audio.play();
+    // audio.volume = 0.2;
 
     //Inicialización del Juego
     game = new Game();
+    //Score y Nombre mostrado en pantalla de Juego
+    score.innerText = 0;    
+    nameScore.innerText = namePlayer.value;
+    
     game.addNewCthulu();
     game.addNewCans();
     game.gameLoop();
@@ -54,15 +56,19 @@ const startGame = () => {
 const keyPress = (event) => {
     if ( event.code === "ArrowLeft" && this.game.cat.x > 0  ){
         this.game.cat.x -= this.game.cat.speedX;
+        
     }
     if (event.code === "ArrowRight" && this.game.cat.x < canvas.width - this.game.cat.h){
-        this.game.cat.x += this.game.cat.speedX; 
+        this.game.cat.x += this.game.cat.speedX;
+        
     }
     if (event.code === "ArrowDown" && this.game.cat.y < canvas.height - this.game.cat.h){
         this.game.cat.y += this.game.cat.speedY;
+        
     }
      if (event.code === "ArrowUp" && this.game.cat.y > 0){
-         this.game.cat.y -= this.game.cat.speedY;
+        this.game.cat.y -= this.game.cat.speedY;
+        
     }
      
  }
