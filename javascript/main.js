@@ -71,6 +71,6 @@ const mouseMove = (e) => {
 
 
 startBtn.addEventListener("click", startGame);
-window.addEventListener("mousemove", mouseMove)
+window.addEventListener("mousemove", mouseMove);
 restartBtn.addEventListener("click", startGame);
 homeBtn.addEventListener("click", homeGame);

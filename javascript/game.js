@@ -14,7 +14,7 @@ class Game {
     ];
     this.totalScore = 0;
     this.delete;
-    this.chuluInterval = 500;
+    this.chuluInterval = 1000;
     this.cansInterval = 2500;
     this.congaInterval = 10000;
     this.isGameOn = true;
@@ -56,7 +56,7 @@ class Game {
           this.cat.y < eachCthulu.y + eachCthulu.h &&
           this.cat.h + this.cat.y > eachCthulu.y){
             this.cthuluArr.splice(index, 1)      
-            this.totalScore += 5;
+            this.totalScore += 2;
             score.innerText = this.totalScore;
             this.cat.img.src = "./images/cat.png"
             this.catInConga = false;  
@@ -84,13 +84,12 @@ class Game {
 
   collisionCans = () => {
    
-    this.cansArr.forEach ((eachCans)=> {
+    this.cansArr.forEach ((eachCans, index)=> {
       if (this.cat.x < eachCans.x + eachCans.w &&
             this.cat.x + eachCans.w > eachCans.x &&
             this.cat.y < eachCans.y + eachCans.h &&
             this.cat.h + this.cat.y > eachCans.y){
-      this.delete = this.cansArr.indexOf(eachCans)
-      this.cansArr.splice(this.delete, 1)      
+      this.cansArr.splice(index, 1)      
       this.totalScore++;
       score.innerText = this.totalScore;
       }
@@ -99,12 +98,28 @@ class Game {
     
   }
 
+  removeCcs = () => {
+    this.cansArr.forEach ((eachCans, index) => {
+      if ( (eachCans.x > canvas.width - eachCans.w ) || (eachCans.y > canvas.height - eachCans.h )){
+        this.cansArr.splice(index, 1)
+      }
+      
+    })
+
+    this.cthuluArr.forEach ((eachCthulu, index) => {
+      if ( (eachCthulu.x > canvas.width - eachCthulu.w ) || (eachCthulu.y > canvas.height - eachCthulu.h )){
+        this.cthuluArr.splice(index, 1)
+      }
+    })
+
+  }
+
   newSpeed = () => {
     if (this.totalScore > 10){
     this.cthuluArr.forEach((eachCthulu) => {
       
-        eachCthulu.speedX = 15;
-        this.chuluInterval = 200;
+        eachCthulu.speedX = 2.5;
+        this.chuluInterval = 100;
       
       })
     }
@@ -148,6 +163,8 @@ class Game {
     this.collisionCans();
 
     this.collisionConga();
+
+    this.removeCcs();
     
     this.cthuluArr.forEach((eachCthulu) => {
       eachCthulu.moveCthulu();
