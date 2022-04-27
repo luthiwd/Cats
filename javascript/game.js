@@ -58,7 +58,8 @@ class Game {
             this.cthuluArr.splice(index, 1)      
             this.totalScore += 5;
             score.innerText = this.totalScore;
-            
+            this.cat.img.src = "./images/cat.png"
+            this.catInConga = false;  
         }
       })
      
