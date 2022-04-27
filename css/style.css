@@ -7,7 +7,7 @@ body {
     background-color: darkgray;
   }
   
-  #start-btn, #restart-btn {
+  #start-btn, #restart-btn, #home-btn {
     background-color:  #a8939a ;
     width: 100px;
     height: 100px;

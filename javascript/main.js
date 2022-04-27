@@ -1,6 +1,7 @@
 // Botones para iniciar y reiniciar el juego
 const startBtn = document.querySelector("#start-btn");
 const restartBtn = document.querySelector ("#restart-btn");
+const homeBtn = document.querySelector ("#home-btn");
 
 //Screens del juego
 const startScreen = document.querySelector("#splash-screen");
@@ -51,6 +52,12 @@ const startGame = () => {
     
 }
 
+const homeGame = () => {
+    gameOverScreen.style.display = "none";
+    startScreen.style.display  = "flex";
+    namePlayer.value = "";
+}
+
 const keyPress = (event) => {
     if ( event.code === "ArrowLeft" && this.game.cat.x > 0  ){
         this.game.cat.x -= this.game.cat.speedX;
@@ -76,3 +83,4 @@ const keyPress = (event) => {
 startBtn.addEventListener("click", startGame);
 window.addEventListener("keydown", keyPress);
 restartBtn.addEventListener("click", startGame);
+homeBtn.addEventListener("click", homeGame);
