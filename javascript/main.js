@@ -58,29 +58,20 @@ const homeGame = () => {
     namePlayer.value = "";
 }
 
-const keyPress = (event) => {
-    if ( event.code === "ArrowLeft" && this.game.cat.x > 0  ){
-        this.game.cat.x -= this.game.cat.speedX;
-        
-    }
-    if (event.code === "ArrowRight" && this.game.cat.x < canvas.width - this.game.cat.h){
-        this.game.cat.x += this.game.cat.speedX;
-        
-    }
-    if (event.code === "ArrowDown" && this.game.cat.y < canvas.height - this.game.cat.h){
-        this.game.cat.y += this.game.cat.speedY;
-        
-    }
-     if (event.code === "ArrowUp" && this.game.cat.y > 0){
-        this.game.cat.y -= this.game.cat.speedY;
-        
-    }
-     
- }
 
+const mouseMove = (e) => {
+    let relativeX = e.clientX - canvas.offsetLeft;
+    let relativeY = e.clientY - canvas.offsetTop;
+    if(relativeX > 0 && relativeX < canvas.width) {
+        this.game.cat.x = relativeX - this.game.cat.w;
+    }
+    if(relativeY > 0 && relativeY < canvas.height) {
+        this.game.cat.y = relativeY - this.game.cat.h;
+    }
+} 
 
 
 startBtn.addEventListener("click", startGame);
-window.addEventListener("keydown", keyPress);
+window.addEventListener("mousemove", mouseMove)
 restartBtn.addEventListener("click", startGame);
 homeBtn.addEventListener("click", homeGame);
