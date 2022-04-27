@@ -14,7 +14,7 @@ class Game {
     ];
     this.totalScore = 0;
     this.delete;
-    this.chuluInterval = 2000;
+    this.chuluInterval = 500;
     this.cansInterval = 2500;
     this.congaInterval = 10000;
     this.isGameOn = true;
@@ -79,8 +79,7 @@ class Game {
       }
          
     })
-    
-      
+   
   }
 
   collisionCans = () => {
@@ -98,10 +97,19 @@ class Game {
          
     })
     
-      
   }
 
-    
+  newSpeed = () => {
+    if (this.totalScore > 10){
+    this.cthuluArr.forEach((eachCthulu) => {
+      
+        eachCthulu.speedX = 15;
+        this.chuluInterval = 200;
+      
+      })
+    }
+  }
+
   addNewCthulu = () => {
     setInterval ( () => { 
       let newCthulu = new Cthulu();
@@ -109,13 +117,7 @@ class Game {
     }, this.chuluInterval)
   }
 
-  newSpeed = () => {
-    this.cthuluArr.forEach((eachCthulu) => {
-      if ( this.totalScore > 5){
-        eachCthulu.speedX = 1.5;
-      }
-    })
-  }
+  
 
   addNewCans = () =>{
     setInterval (() => {

@@ -3,7 +3,7 @@ class Cthulu {
     constructor () {
         this.x = 0; // posicion eje x
         this.y = Math.random() * canvas.height; // posicion eje y
-        this.speedX = 1;
+        this.speedX = 3;
         this.speedY = 0;
         this.dx = 0;
         this.dy = 0; 

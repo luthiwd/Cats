@@ -58,7 +58,6 @@ const homeGame = () => {
     namePlayer.value = "";
 }
 
-
 const mouseMove = (e) => {
     let relativeX = e.clientX - canvas.offsetLeft;
     let relativeY = e.clientY - canvas.offsetTop;
