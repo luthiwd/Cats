@@ -1,14 +1,10 @@
-Reglas del juego:
-Objetivo: Evitar ser capturado por el Humano.
-Apareceran humanos extras cuando no se capturan latas de comida.
-El jugador tiene 3 vidas.
-El movimiento del humano sera aleatorio, aparecerá de manera aleatoria.
-Apareceran "llaves" que harán desaparecer a los humanos extras.
-Se pierde cuando el humano nos captura varias veces.
+Game rules:
+Target: Avoiding Cthulus and capturing cans
 
-Personajes: 
-Gato : Se podrá mover por toda la pantalla, evitando al humano y cogiendo latas y "llaves"
-Cthulu : Aparecerá de manera aleatoria en 5 posiciones, cada minuto de jhuego aparecerá un nuevo humano que podrás desaparecer con las "llaves"
+Characters: 
+Cat : You will be able to move around the screen, avoiding cthulus and picking up cans and congas. They give one point
+Cthulu : Appear randomly from left to right
+Conga : When you take it you can eliminate a Cthulu which will give 5 points.
 
 # CATS
 
@@ -30,7 +26,7 @@ List here the JS files you think you might need.
 ## main.js
 ## startGame()
 ## game.js
-## Game () { this.player; }
+    Game () 
     gameLoop () {}
     checkCollisions () {}
 ## cat.js
