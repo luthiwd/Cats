@@ -38,13 +38,15 @@ const startGame = () => {
 
     //Musica del juego
     audio.play();
-    audio.volume = 0.2;
+    audio.volume = 0.05;
 
     //Inicialización del Juego
     game = new Game();
     //Score y Nombre mostrado en pantalla de Juego
     score.innerText = 0;    
     nameScore.innerText = namePlayer.value;
+
+    
     game.addNewConga();
     game.addNewCthulu();
     game.addNewCans();

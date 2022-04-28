@@ -14,12 +14,13 @@ class Game {
     ];
     this.totalScore = 0;
     this.delete;
-    this.chuluInterval = 1000;
+    this.chuluInterval = 800;
     this.cansInterval = 2500;
     this.congaInterval = 10000;
     this.isGameOn = true;
     this.imgCat = "./images/catconga.png";
     this.catInConga = false;
+    this.newredC = new RedCthulu();
   }
 
   gameRun = () => {
@@ -119,7 +120,7 @@ class Game {
     this.cthuluArr.forEach((eachCthulu) => {
       
         eachCthulu.speedX = 2.5;
-        this.chuluInterval = 100;
+        this.chuluInterval = 500;
       
       })
     }
@@ -132,16 +133,28 @@ class Game {
     }, this.chuluInterval)
   }
 
-  
 
-  addNewCans = () =>{
+  //Intento de funcionalidad para que un enemigo persiga al gato
+  // redC = () => {
+  //   if ( this.totalScore >= 1 ){
+  //     this.newredC.drawRedCthulu();
+  //   }
+  // }
+
+  // moveRedC = () => {
+  //   if ( this.totalScore >= 3 ){
+  //     this.newredC.moveRedCthulu(this.cat.x, this.cat.y);
+  //   }
+  // }
+
+  addNewCans = () => {
     setInterval (() => {
       let newCans = new Cans();
       this.cansArr.push(newCans);
     }, this.cansInterval)
   }
 
-  addNewConga = () =>{
+  addNewConga = () => {
     setInterval (() => {
       let newConga = new Conga();
       this.congaArr.push(newConga);
@@ -177,12 +190,16 @@ class Game {
     this.congaArr.forEach((eachConga) => {
       eachConga.moveConga();
     })
+
+    //this.moveRedC();
     
 
     // 3. Dibujar los elementos
     ctx.drawImage (this.bg, 0, 0, canvas.width, canvas.height);
 
     this.cat.drawCat();
+    
+    //this.redC();
 
     this.congaArr.forEach((eachConga) => {
       eachConga.drawConga();

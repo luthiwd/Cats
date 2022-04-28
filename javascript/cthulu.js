@@ -9,13 +9,15 @@ class Cthulu {
         this.h = 60; // height - alto
         this.img = new Image();
         this.img.src = "./images/cthulu.png";
+        
     }
 
     
-    
     drawCthulu = () => {
-        ctx.drawImage(this.img, this.x, this.y, this.w, this.h)
+         ctx.drawImage(this.img, this.x, this.y, this.w, this.h)
     }
+
+
 
     moveCthulu = () => {
         this.x += this.speedX;
