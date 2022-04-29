@@ -32,7 +32,7 @@ The conga appears randomly.
     Game ()
     gameRun () // Cat gets on the conga and could kill a cthulu
     gameOver () // If the cat collides with a cthulu you lose
-    checkCollisions () 
+    checkCollisions () with Cans & Chtulus
 ## cat.js
     Cat class with src parameter to change the image in condicional of the game () 
     drawCat () // Cat draw 
@@ -40,6 +40,8 @@ The conga appears randomly.
 ## cthulu.js
     drawCthulu () // Cthulu is draw.
     moveCthulu () // Cthulu moves left to right with interval
+## redcthulu.js
+    Is equal 
 ## cnas.js
     drawCans () // Cans is draws
     moveCans () // Cans move up to down.
@@ -51,4 +53,4 @@ Trello
     https://trello.com/b/hijdJl9A/cats
 
 Slides
-Link Slides.com
+Link https://docs.google.com/presentation/d/1x8EL21YL9Ufr3fvkT32t-A-3Fw4Up8obCXtyCzRS700/edit?usp=sharing
