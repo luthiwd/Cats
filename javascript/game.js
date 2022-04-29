@@ -12,6 +12,8 @@ class Game {
     this.cansArr = [
       new Cans (Math.random()*canvas.width, "./image/lata.png")
     ];
+    this.cthuluRedArr = [
+      new RedCthulu(0, "./images/redcthulu.png")];
     this.totalScore = 0;
     this.delete;
     this.chuluInterval = 800;
@@ -20,7 +22,7 @@ class Game {
     this.isGameOn = true;
     this.imgCat = "./images/catconga.png";
     this.catInConga = false;
-    this.newredC = new RedCthulu();
+    this.redC = new RedCthulu();
   }
 
   gameRun = () => {
@@ -47,6 +49,23 @@ class Game {
         }
 
       })
+
+      this.cthuluRedArr.forEach ((eachRedC)=> {
+        if (this.cat.x < eachRedC.x + eachRedC.w &&
+          this.cat.x + eachRedC.w > eachRedC.x &&
+          this.cat.y < eachRedC.y + eachRedC.h &&
+          this.cat.h + this.cat.y > eachRedC.y){
+          this.isGameOn = false;
+          canvas.style.display = "none";
+          gameOverScreen.style.display = "flex";
+          gameDiv.style.display = "none";
+          scoreBoard.style.display = "block"
+          audio.pause();
+          scoreBoard.innerText = namePlayer.value + "  " + this.totalScore
+        }
+
+      })
+
   }
 
 
@@ -58,6 +77,19 @@ class Game {
           this.cat.h + this.cat.y > eachCthulu.y){
             this.cthuluArr.splice(index, 1)      
             this.totalScore += 2;
+            score.innerText = this.totalScore;
+            this.cat.img.src = "./images/cat.png"
+            this.catInConga = false;  
+        }
+      })
+
+      this.cthuluRedArr.forEach ((eachRedC, index)=> {
+        if (this.cat.x < eachRedC.x + eachRedC.w &&
+          this.cat.x + eachRedC.w > eachRedC.x &&
+          this.cat.y < eachRedC.y + eachRedC.h &&
+          this.cat.h + this.cat.y > eachRedC.y){
+            this.cthuluRedArr.splice(index, 1)      
+            this.totalScore += 4;
             score.innerText = this.totalScore;
             this.cat.img.src = "./images/cat.png"
             this.catInConga = false;  
@@ -113,6 +145,12 @@ class Game {
       }
     })
 
+    this.cthuluRedArr.forEach ((eachRedC, index) => {
+      if ( (eachRedC.x > canvas.width - eachRedC.w ) || (eachRedC.y > canvas.height - eachRedC.h )){
+        this.cthuluRedArr.splice(index, 1)
+      }
+    })
+
   }
 
   newSpeed = () => {
@@ -126,11 +164,29 @@ class Game {
     }
   }
 
+  newSpeedRed = () => {
+    if (this.totalScore > 20){
+    this.cthuluRedArr.forEach((eachRedC) => {
+      
+      eachRedC.speedX = 2.5;
+        
+      
+      })
+    }
+  }
+
   addNewCthulu = () => {
     setInterval ( () => { 
       let newCthulu = new Cthulu();
       this.cthuluArr.push(newCthulu);
     }, this.chuluInterval)
+  }
+
+  addNewRedCthulu = () => {
+    setInterval ( () => { 
+      let newRedCthulu = new RedCthulu();
+      this.cthuluRedArr.push(newRedCthulu);
+    }, 2000)
   }
 
 
@@ -172,6 +228,8 @@ class Game {
     this.gameRun();
 
     this.newSpeed();
+
+    this.newSpeedRed();
     
     this.collisionCans();
 
@@ -191,7 +249,9 @@ class Game {
       eachConga.moveConga();
     })
 
-    //this.moveRedC();
+    this.cthuluRedArr.forEach((eachRedC) => {
+      eachRedC.moveRedCthulu();
+    })
     
 
     // 3. Dibujar los elementos
@@ -199,7 +259,9 @@ class Game {
 
     this.cat.drawCat();
     
-    //this.redC();
+    this.cthuluRedArr.forEach((eachRedC) => {
+      eachRedC.drawRedCthulu();
+    })
 
     this.congaArr.forEach((eachConga) => {
       eachConga.drawConga();

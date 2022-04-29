@@ -46,7 +46,7 @@ const startGame = () => {
     score.innerText = 0;    
     nameScore.innerText = namePlayer.value;
 
-    
+    game.addNewRedCthulu();
     game.addNewConga();
     game.addNewCthulu();
     game.addNewCans();

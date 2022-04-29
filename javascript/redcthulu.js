@@ -1,11 +1,8 @@
 class RedCthulu {
 
     constructor () {
-        this.x = 80; // posicion eje x
+        this.x = Math.random() * canvas.width; // posicion eje x
         this.y = 20; // posicion eje y
-        this.dx;
-        this.dy;
-        this.hyp; 
         this.speedX = 1;
         this.speedY = 1;
         this.w = 60; // width - ancho
@@ -22,16 +19,8 @@ class RedCthulu {
          ctx.drawImage(this.img, this.x, this.y, this.w, this.h)
     }
 
-    moveRedCthulu = (catx, caty) =>  {
+    moveRedCthulu = () =>  {
 
-        this.dx = catx - this.x;
-        this.dy = caty - this.y;
-
-        this.speedX = this.speedX * (this.dx/this.distance);
-        this.speedY = this.speedY * (this.dy/this.distance);
-        this.dx = catx - this.x;
-        this.dy = caty - this.y;
-        
         this.x += this.speedX;
         this.y += this.speedY;
     }
